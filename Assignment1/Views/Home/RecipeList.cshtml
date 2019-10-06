@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Assignment1.Models.Recipe>
+@{
+    Layout = "_Layout";
+}
+
+
+<h1>Our recipes:</h1>
+<table>
+    @foreach (Assignment1.Models.Recipe r in Model)
+    {
+        <tr>
+            <td>
+                <img src="/images/perogies.jpg" width="156" height="124" id="descImg" />
+            </td>
+            <td>
+                <h5><a asp-action="ViewRecipe">@r.Title</a> by @r.Name</h5>
+                <p>@r.Description</p>
+            </td>
+            
+        </tr>
+
+
+    }
+</table>
+

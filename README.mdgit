@@ -1,0 +1,1 @@
+"# COMP229-A1-301052271"  initgit add README.mdgit commit -m "first commit"git remote add origin https://github.com/ostrikovvlad/COMP229-A1-301052271.gitgit push -u origin master

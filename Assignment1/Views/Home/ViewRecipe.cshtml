@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Assignment1.Models.Recipe>
+@{
+    Layout = "_Layout";
+}
+@foreach (Assignment1.Models.Recipe r in Model)
+{
+<div class="panel-body">
+    <h2> @r.Title</h2>
+    <h3> by @r.Name</h3>
+    <p>
+        <table class="table table-sm table-striped table-bordered">
+            <tr>
+                <td>@r.Description</td>
+            </tr>
+            <tr>
+                <td><img src="/images/perogies.jpg" width="256" height="224" id="descImg" />
+                    <ul>
+                        Ingredients:
+                        @foreach (string i in r.Ingredients.Split(";"))
+                        {
+                            <li>@i</li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ol>
+                        Instructions:
+                        @foreach(string i in r.Instruction.Split(";"))
+                        {
+                            <li>@i</li>
+                        }
+                    </ol>
+                </td>
+            </tr>
+        </table>
+    </p>
+</div>
+}
+
+

@@ -1,0 +1,23 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/Styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.min.css" />
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+        <div class="main-content2">
+            <header>
+                <h1>Tasty Recipes</h1>
+                <nav><a asp-action="Index">Home</a> <a asp-action="AddRecipe">Add Recipe</a> <a asp-action="RecipeList">Our Recipes</a></nav>
+            </header>
+            <div class="contextBody">
+                @RenderBody()
+            </div>
+        </div>
+</body>
+</html>

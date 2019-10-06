@@ -1,0 +1,34 @@
+﻿@model Assignment1.Models.Recipe
+
+@{
+    Layout = "_Layout";
+}
+
+    <form asp-action="AddRecipe" method="Post">
+        <div class="panel-body">
+            <div class="form-group">
+                <label asp-for="Name">Your name:</label>
+                <input class="form-control" asp-for="Name" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Title">Recipe name:</label>
+                <input class="form-control" asp-for="Title" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Description:</label>
+                <input class="form-control" asp-for="Description" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Ingredients">Ingedients:</label>
+                <input class="form-control" asp-for="Ingredients" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Instruction">Instructions:</label>
+                <input class="form-control" asp-for="Instruction" />
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary" type="submit">Post your recipe</button>
+            </div>
+        </div>
+    </form>
+
