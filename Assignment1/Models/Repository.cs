@@ -20,13 +20,20 @@ namespace Assignment1.Models
                 "Place over high heat, and bring to a boil. Cook until fork-tender. Drain and mash with a potato masher. Add 4 tablespoons melted butter and the cheeses, and continue to mash until well incorporated. Season with salt and pepper to taste. " +
                 "Place a large pot of salted water over high heat, and bring to a boil. Lay a clean linen towel on your counter, and evenly distribute cornmeal on it to prevent sticking.;On a floured surface, roll out dough to about 1/8 inch thick." +
                 "Using a glass or cookie cutter measuring 2 1/2 inches in diameter, cut out as many circles as possible. Gather dough scraps together, rolling them out again, and continue cutting.;Form filling into 1 1/2-inch balls, and place a ball in the center of each dough circle. " +
-                "Holding a circle in your hand, fold dough over filling, and pinch the edges, forming a well-sealed crescent.Transfer to linen towel.Continue this process until all dough circles are filled.; Place pierogi in boiling water in batches.They will sink to the bottom of the pot and then rise to the top.Once they rise, let them cook for about a minute more. Meanwhile, drizzle platter with remaining 8 tablespoons melted butter.Remove pierogi from pot, and transfer to platter to prevent sticking.Serve immediately. "
+                "Holding a circle in your hand, fold dough over filling, and pinch the edges, forming a well-sealed crescent.Transfer to linen towel.Continue this process until all dough circles are filled.; Place pierogi in boiling water in batches.They will sink to the bottom of the pot and then rise to the top.Once they rise, let them cook for about a minute more. Meanwhile, drizzle platter with remaining 8 tablespoons melted butter.Remove pierogi from pot, and transfer to platter to prevent sticking.Serve immediately. ",
+                Username="Name",
+                Comment="Review"
             }
         };
         
         public static IEnumerable<Recipe> Recipes
         {
             get { return recipes; }
+        }
+        public static void AddReview(string username, string comment)
+        {
+            recipes.ElementAt(0).Review.Add(new Review() { Name = username, Comment = comment });
+            //recipes.ElementAt(0).Comment = comment;
         }
 
         public static void AddRecipe(Recipe recipe)

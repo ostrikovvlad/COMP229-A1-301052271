@@ -26,7 +26,19 @@ namespace Assignment1.Controllers
             Repository.AddRecipe(recipe);
             return View("RecipeList", Repository.Recipes);
         }
-        
+        [HttpGet]
+        public ViewResult LeaveReview()
+        {
+            ViewBag.Title = "Leave a Review";
+            return View();
+        }
+        [HttpPost]
+        public ViewResult LeaveReview(Recipe recipe)
+        {
+            Repository.AddReview(recipe.Username, recipe.Comment);
+            return View("ViewRecipe", Repository.Recipes);
+        }
+
         public ViewResult RecipeList()
         {
             ViewBag.Title = "Recipe List";
@@ -34,8 +46,8 @@ namespace Assignment1.Controllers
         }
         public ViewResult ViewRecipe()
         {
-            ViewBag.Title = "Recipe Details";
-            return View("ViewRecipe", Repository.Recipes.Where(r => r.Title == "Potato perogies"));
+            ViewBag.Title = "Potato perogies";
+            return View("ViewRecipe", Repository.Recipes.Where(r => r.Title == ViewBag.Title));
         }
     }
 }

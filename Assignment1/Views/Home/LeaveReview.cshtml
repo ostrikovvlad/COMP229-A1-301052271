@@ -1,0 +1,20 @@
+﻿@model Assignment1.Models.Recipe
+@{
+    Layout = "_Layout";
+}
+<h2>Leave a review for:</h2>
+<h3><a asp-action="ViewRecipe">Potato perogies</a></h3>
+<form asp-action="LeaveReview" method="Post">
+    <div class="panel-body">
+        <div>
+            <label asp-for="Username">Username</label>
+            <input asp-for="Username" />
+        </div>
+        <div>
+            <label asp-for="Comment">Comment</label>
+            <input asp-for="Comment" />
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+

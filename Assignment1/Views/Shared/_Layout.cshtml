@@ -9,15 +9,15 @@
     <title>@ViewBag.Title</title>
 </head>
 
-<body>
-        <div class="main-content2">
-            <header>
-                <h1>Tasty Recipes</h1>
-                <nav><a asp-action="Index">Home</a> <a asp-action="AddRecipe">Add Recipe</a> <a asp-action="RecipeList">Our Recipes</a></nav>
-            </header>
-            <div class="contextBody">
-                @RenderBody()
-            </div>
+<body background-color="darkgrey">
+    <div class="main-content2">
+        <header>
+            <h1>Tasty Recipes</h1>
+            <nav><a asp-action="Index">Home</a> <a asp-action="AddRecipe">Add Recipe</a> <a asp-action="RecipeList">Our Recipes</a></nav>
+        </header>
+        <div class="contextBody">
+            @RenderBody()
         </div>
+    </div>
 </body>
 </html>

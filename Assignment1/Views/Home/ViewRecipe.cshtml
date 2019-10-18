@@ -4,16 +4,16 @@
 }
 @foreach (Assignment1.Models.Recipe r in Model)
 {
-<div class="panel-body">
-    <h2> @r.Title</h2>
-    <h3> by @r.Name</h3>
-    <p>
+    <div class="panel-body">
+        <h2> @r.Title</h2>
+        <h3> by @r.Name</h3>
         <table class="table table-sm table-striped table-bordered">
             <tr>
                 <td>@r.Description</td>
             </tr>
             <tr>
-                <td><img src="/images/perogies.jpg" width="256" height="224" id="descImg" />
+                <td>
+                    <img src="/images/perogies.jpg" width="256" height="224" id="descImg" />
                     <ul>
                         Ingredients:
                         @foreach (string i in r.Ingredients.Split(";"))
@@ -27,7 +27,7 @@
                 <td>
                     <ol>
                         Instructions:
-                        @foreach(string i in r.Instruction.Split(";"))
+                        @foreach (string i in r.Instruction.Split(";"))
                         {
                             <li>@i</li>
                         }
@@ -35,8 +35,17 @@
                 </td>
             </tr>
         </table>
-    </p>
-</div>
+        <h2>Reviews</h2>
+        <table class="table table-sm table-striped table-bordered">
+            @foreach (Assignment1.Models.Review c in r.Review)
+            {
+                <tr>
+                    <td><b>@c.Name</b>: @c.Comment</td>
+                </tr>
+            }
+        </table>
+        <a asp-action="LeaveReview">Leave a Review</a>
+    </div>
 }
 
 
